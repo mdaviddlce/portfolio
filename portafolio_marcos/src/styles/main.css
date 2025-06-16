@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Encode+Sans+Expanded:wght@100;200;300;400;500;600;700;800;900&family=IBM+Plex+Sans:wght@100&family=Michroma&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.fullscreen-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #F0EBE3;
+    font-family: "Michroma", sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.titulo-superior {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 5vw;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.titulo-inferior {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 5vw;
+    margin: 0;
+    line-height: 1.2;
+    text-align: right;
+}
+
+/* Estilos para el botón de CV */
+.cv-button {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    padding: 12px 25px;
+    background-color: transparent;
+    color: #000;
+    border: 2px solid #000;
+    font-family: "Michroma", sans-serif;
+    font-size: 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cv-button:hover {
+    background-color: #000;
+    color: #F0EBE3;
+}
+
+/* Media queries para ajustes en pantallas pequeñas */
+@media (max-width: 600px) {
+    .titulo-superior, .titulo-inferior {
+        font-size: 8vw;
+    }
+    
+    .cv-button {
+        font-size: 0.8rem;
+        padding: 10px 20px;
+    }
+}
