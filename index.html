@@ -8,13 +8,24 @@
 </head>
 <body>
     <div class="fullscreen-container">
-        <h1 class="titulo-superior">COMPUTER <br>SYSTEMS <br>ENGINEER</h1>
-        <h1 class="titulo-inferior">MARCOS <br>DE LA CRUZ</h1>
-        
-        <!-- Botón para descargar CV -->
-        <a href="./docs/cv_marcos_de_la_cruz.pdf" download="CV-Marcos-DeLaCruz.pdf" class="cv-button">
-            DESCARGAR CV
+
+        <h1 class="titulo-superior" data-i18n="title">COMPUTER <br>SYSTEMS <br>ENGINEER</h1>
+        <h1 class="titulo-inferior" data-i18n="name">MARCOS <br>DE LA CRUZ</h1>
+
+        <!-- Botones de idioma -->
+        <div class="language-selector">
+            <button class="language-btn" data-lang="es">ES</button>
+            <button class="language-btn" data-lang="en">EN</button>
+        </div>
+
+        <!-- Botón de CV -->
+        <a href="#" id="cvButton" class="cv-button" 
+        data-i18n="download_cv"
+        data-cv-es="cv/cv_es.pdf"
+        data-cv-en="cv/cv_en.pdf">
+            CV
         </a>
+        
     </div>
     <script src="scripts/main.js"></script>
 </body>

@@ -12,13 +12,14 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #F0EBE3;
+    background-color: #EEE8DF;
     font-family: "Michroma", sans-serif;
     padding: 20px;
     box-sizing: border-box;
 }
 
 .titulo-superior {
+    color: #2C365A;
     position: absolute;
     top: 20px;
     left: 20px;
@@ -28,6 +29,7 @@ body {
 }
 
 .titulo-inferior {
+    color: #2C365A;
     position: absolute;
     bottom: 20px;
     right: 20px;
@@ -44,8 +46,9 @@ body {
     left: 20px;
     padding: 12px 25px;
     background-color: transparent;
-    color: #000;
+    color: #2C365A;
     border: 2px solid #000;
+    border-radius: 2px;
     font-family: "Michroma", sans-serif;
     font-size: 1rem;
     text-decoration: none;
@@ -53,21 +56,120 @@ body {
     letter-spacing: 1px;
     cursor: pointer;
     transition: all 0.3s ease;
+    box-sizing: border-box;
+    white-space: nowrap;
 }
 
 .cv-button:hover {
-    background-color: #000;
-    color: #F0EBE3;
+    background-color: #2C365A;
+    color: #EEE8DF;
+}
+
+.language-selector {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 1001;
+}
+
+.language-selector button {
+    background: transparent;
+    border: 2px solid #2C365A;
+    padding: 5px 15px;
+    color: #2C365A;
+    cursor: pointer;
+    font-family: "Michroma", sans-serif;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.language-selector button:hover {
+    background: #2C365A;
+    color: #EEE8DF;
+}
+
+/* Estilo para el idioma activo */
+.language-selector button.active {
+    background: #2C365A;
+    color: #EEE8DF;
+}
+
+[data-i18n] {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.changing-language {
+    opacity: 0.5;
+    transform: translateY(-5px);
 }
 
 /* Media queries para ajustes en pantallas pequeñas */
 @media (max-width: 600px) {
-    .titulo-superior, .titulo-inferior {
-        font-size: 8vw;
+    .fullscreen-container {
+        padding: 15px;
     }
-    
+
+    .titulo-superior, 
+    .titulo-inferior {
+        font-size: 7vw;
+        line-height: 1.4;
+        white-space: normal; /* Cambia el manejo de saltos de línea */
+    }
+
+    .titulo-superior {
+        top: 15px;
+        left: 15px;
+        right: 15px;
+        text-align: center;
+        font-size: 20px !important;
+        margin-top: 40px;
+    }
+
+    .titulo-inferior {
+        bottom: 80px; /* Deja espacio para el botón */
+        left: 15px;
+        right: 15px;
+        text-align: center;
+        font-size: 20px !important;
+    }
+
     .cv-button {
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        max-width: 200px;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .language-selector {
+        top: 15px;
+        right: 15px;
+    }
+
+    .language-selector button {
+        padding: 3px 8px;
         font-size: 0.8rem;
-        padding: 10px 20px;
     }
 }
+
+/* Ajustes para pantallas muy pequeñas (menos de 400px) */
+@media (max-width: 400px) {
+    .titulo-superior, 
+    .titulo-inferior {
+        font-size: 8vw;
+    }
+
+    .titulo-superior {
+        top: 10px;
+
+    }
+
+    .titulo-inferior {
+        bottom: 70px;
+    }
+}
+
